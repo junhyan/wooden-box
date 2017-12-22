@@ -7,6 +7,7 @@ from rest_framework.response import Response
 
 
 from . import database
+from .models import PageView
 
 # Create your views here.
 @api_view(['GET', 'POST'])
