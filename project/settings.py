@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
-    'welcome',
+    'rest_framework',
+    'notebook',
 ]
 
 MIDDLEWARE = [
