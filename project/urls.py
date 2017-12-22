@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from notebook.views import index
+from notebook.views import index, health
 
 urlpatterns = [
     # Examples:
@@ -10,7 +10,7 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$',index),
-#    url(r'^health$', health),
+    url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
 ]
 
