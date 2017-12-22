@@ -16,4 +16,4 @@ def index(request):
     return Response({"message": "Hello, world!"})
 
 def health(request):
-return HttpResponse(PageView.objects.count())
+    return HttpResponse(PageView.objects.count())
