@@ -6,6 +6,51 @@
 <link rel="stylesheet" href="" type="text/css">
 </head>
 
-<script src="js/jquery-1.8.2.js"></script>
-<script src="myregister.js"></script>
-<script language="javascript"> 
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script src="/static/js/user.js"></script>
+
+<body>
+
+<form name="form1" method="post" action="" enctype='multipart/form-data' >
+  <table width="782" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
+    <tr>
+      <th colspan="2" bgcolor="#FFFFFF"><font size="5">Add User</font></th>
+    </tr>
+    <tr>
+      <td width="364" align="right" bgcolor="#FFFFFF"> name</td>
+      <td width="403" bgcolor="#FFFFFF">
+        <input type="text" name="cname" id="name">
+    </tr>
+    <tr>
+      <td width="364" align="right" bgcolor="#FFFFFF"> mobile</td>
+      <td width="403" bgcolor="#FFFFFF">
+        <input type="text" name="cname" id="mobile">
+    </tr>
+    <tr>
+      <td width="364" align="right" bgcolor="#FFFFFF"> email</td>
+      <td width="403" bgcolor="#FFFFFF">
+        <input type="text" name="cname" id="email">
+    </tr>
+    <!--tr>
+      <td align="right" bgcolor="#FFFFFF">密码</td>
+      <td bgcolor="#FFFFFF">
+        <input type="password" name="pwd" id="uPassword">
+    </tr>
+	<tr>
+      <td align="right" bgcolor="#FFFFFF">确认密码</td>
+      <td bgcolor="#FFFFFF">
+        <input type="password"  name="cpassword"  >
+    </tr-->
+    <tr>
+      <td  align=right bgcolor="#FFFFFF" >
+      <input type="button" name="submit"  id="submit" value="add" >
+      </td>
+      <td align=left bgcolor="#FFFFFF">
+        <input type="reset" name="submit" value="reset">
+      </td>
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>

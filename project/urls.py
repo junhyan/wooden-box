@@ -13,15 +13,14 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^health$', views.health),
     url(r'^add_user$', views.add_user),
-    url(r'^get_user_by_id/(?P<book_id>\d+)$', views.get_user_by_id),
+    url(r'^get_user_by_id/(?P<id>\d+)$', views.get_user_by_id),
     url(r'^admin/', include(admin.site.urls)),
 
     #used for web page render
-    url(r'^register/$', register),
+    url(r'^register/$', views.register),
 
     # for static file used in product
-    static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar

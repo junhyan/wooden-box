@@ -26,7 +26,7 @@ def get_user(id):
         return Http404
 
 @api_view(['POST'])
-def add_user(request)
+def add_user(request):
     serializer = serializers.UserSerializer(data = request.data)
 
     if serializer.is_valid():
@@ -35,10 +35,14 @@ def add_user(request)
     return Response(serializer.errors, status = status.HTTP_400_BAD_REQUSET)
 
 @api_view(['GET', 'POST'])
-def get_user_by_id(request,id)
+def get_user_by_id(request,id):
     user = get_user(id)
     serializer = serializers.UserSerializer(user)
     return Response(serializer.data)
 
 def health(request):
     return HttpResponse(PageView.objects.count())
+
+def register(request):
+    static_html = 'user/register.html'
+    return render(request, static_html)
