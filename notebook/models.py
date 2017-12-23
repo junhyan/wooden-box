@@ -10,4 +10,4 @@ class User(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     mobile = models.CharField(max_length=50)
-    passwd = models.CharField(max_length=50)
+    passwd = models.CharField(max_length=50, null=True)
