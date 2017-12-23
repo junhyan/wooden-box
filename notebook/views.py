@@ -22,7 +22,7 @@ def index(request):
 def get_user(id):
     try:
         return User.objects.get(id = id)
-    except Book.DoesNotExist:
+    except User.DoesNotExist:
         return Http404
 
 @api_view(['POST'])
