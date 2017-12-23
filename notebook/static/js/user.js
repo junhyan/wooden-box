@@ -1,6 +1,7 @@
 $(document).ready(function()
 {
-    var domain='http://10.66.12.122:8000/'
+    //var domain='http://10.66.12.122:8000/'
+    var domain='http://wooden-box.1d35.starter-us-east-1.openshiftapps.com/'
     $('#add_user').click(function(){
         		
         $.ajax({
