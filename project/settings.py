@@ -143,6 +143,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 INTERNAL_IPS = ['127.0.0.1']
 
+MEDIA_URL = "/upload/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "notebook/upload")
 #DATABASE_SERVICE_NAME = 'postgresql'
 #DATABASE_ENGINE = 'postgresql'
 #DATABASE_NAME = 'wb'
