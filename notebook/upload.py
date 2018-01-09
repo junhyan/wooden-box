@@ -9,19 +9,13 @@ import datetime as dt
 
 @csrf_exempt
 def upload_image(request, dir_name):
-    ##################
-    #  kindeditor图片上传返回数据格式说明：
-    # {"error": 1, "message": "出错信息"}
-    # {"error": 0, "url": "图片地址"}
-    ##################
-    result = {"error": 1, "message": "上传出错"}
+    result = {"error": 1, "message": "wrong format"}
     files = request.FILES.get("imgFile", None)
     if files:
         result = image_upload(files, dir_name)
     return HttpResponse(json.dumps(result), content_type="application/json")
 
 
-# 目录创建
 def upload_generation_dir(dir_name):
     today = dt.datetime.today()
     url_part = dir_name + '/%d/%d/' % (today.year, today.month)
@@ -32,17 +26,15 @@ def upload_generation_dir(dir_name):
     return dir_name,url_part
 
 
-# 图片上传
 def image_upload(files, dir_name):
-    # 允许上传文件类型
     allow_suffix = ['jpg', 'png', 'jpeg', 'gif', 'bmp']
     file_suffix = files.name.split(".")[-1]
     if file_suffix not in allow_suffix:
-        return {"error": 1, "message": "图片格式不正确"}
+        return {"error": 1, "message": "wrong pic format"}
     relative_path_file, url_part = upload_generation_dir(dir_name)
     path = os.path.join(settings.MEDIA_ROOT, relative_path_file)
     print("&&&&path", path)
-    if not os.path.exists(path):  # 如果目录不存在创建目录
+    if not os.path.exists(path):
         os.makedirs(path)
     file_name = str(uuid.uuid1()) + "." + file_suffix
     path_file = os.path.join(path, file_name)

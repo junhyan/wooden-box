@@ -2,34 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Welcome to OpenShift</title>
-  <script src="/static/js/vue.min.js"></script>
+  <title>Wooden Box</title>
+  <link rel="stylesheet" href="/static/css/index.css" />
+  <script src="/static/js/jquery-3.2.1.min.js"></script>
+  <script src="/static/js/cookie.js"></script>
+  <script charset="utf-8" src="/static/js/index.js"></script>
+
 </head>
 <body>
-<div id="app">
-[[message]]
-</div>
-<div id="app-2">
-  <span v-bind:title="message">
-    鼠标悬停几秒钟查看此处动态绑定的提示信息！
-  </span>
-</div>
-<script>
-var app = new Vue({
-  delimiters:['[[', ']]'],
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
-})
-var app2 = new Vue({
-  el: '#app-2',
-  data: {
-    message: '页面加载于 ' + new Date().toLocaleString()
-  }
-})
-</script>
-
+    <div id="top">
+        <div id="header">
+            <font size="5" id="font-logo">Wooden Box</font> 
+            <input type="text" id="search"/>
+            <a id="search-button" href="javascript:void(0);"><font size="4" color=#8e8e8e>搜索</font></a> 
+            <div id="option">
+                <a id="new-note" href="javascript:void(0);" style="display:none"><font color=#8e8e8e>新记事</font></a> 
+                <a id="login" href="javascript:void(0);"><font color=#8e8e8e>登陆</font></a> 
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div id="main">
+         <div id="nav">
+            <div class="logoimg">
+                <img src="/static/img/woodenbox.png"/>
+            </div>
+        </div>
+        <div id="lists">
+        </div>
+    </div>
+    <div id="login-div" style="display:none">
+        <div>
+            <p>用户：<input type="text" id="username"/></p>
+            <p>密码：<input type="password" id="password"/></p>
+            <a id="login-internal" href="javascript:void(0);"><font color=#8e8e8e>登陆</font></a> 
+        </div>
+    </div>
 </body>
 </html>

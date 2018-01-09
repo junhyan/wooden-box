@@ -1,32 +1,40 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<title>KindEditor PHP</title>
-	<link rel="stylesheet" href="/static/css/themes/default/default.css" />
+    <meta charset="utf-8">
+    <title>Wooden Editor</title>
+    <link rel="stylesheet" href="/static/css/editor.css" />
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="/static/css/themes/default/default.css" />
 	<link rel="stylesheet" href="/static/js/plugins/code/prettify.css" />
 	<script charset="utf-8" src="/static/js/kindeditor-all-min.js"></script>
 	<script charset="utf-8" src="/static/js/lang/zh-CN.js"></script>
 	<script charset="utf-8" src="/static/js/plugins/code/prettify.js"></script>
-	<script>
-		KindEditor.ready(function(K) {
-			var editor1 = K.create('textarea[name="content1"]', {
-			    cssPath : '/static/js/plugins/code/prettify.css',	
-                themesPath: '/static/css/themes/',
-                uploadJson:'/upload/media',
-			
-			});
-
-
-		});
-	</script>
+    <script src="/static/js/cookie.js"></script>
+    <script charset="utf-8" src="/static/js/editor.js"></script>
 </head>
 <body>
-	<form name="example" method="post" action="">
-		<textarea name="content1" style="width:700px;height:200px;"></textarea>
-		<br />
-        <input type="submit" name="submit"  id="to-html" value="html" >
-	</form>
+    <div id="header">
+        <font size="5" id="font-logo">Wooden Box</font> 
+        <div id="option">
+           <a id="add_note" href="javascript:void(0);"><font color=#8e8e8e>保存</font></a> 
+        </div>
+    </div>
+    <hr>
+    <div id="main">
+         <div id="paint">
+
+        </div>
+        <div id="editor">
+            <label>主题：</label>
+            <input type='text' id="topic"/>    
+            <input type='text' id="new-type-text" style="display:none"/>    
+            <select id="type">
+            </select>
+            <a id="new-type" href="javascript:void(0);"><font size="4" color=#8e8e8e>新类型</font></a>
+            <a id="save-type" href="javascript:void(0);" style="display:none"><font color=#8e8e8e>保存类型</font></a> 
+            <textarea id="content" name="content" style="width:90%;height:100%;"></textarea>
+        </div>
+    </div>
 </body>
 </html>
-
