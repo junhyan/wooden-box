@@ -19,7 +19,7 @@ $(document).ready(function()
         		            })
         		           	})
         		            .done(function (data, status, headers, config) {
-                                alert(data.name));
+                                alert(data.name);
         		            })
         		            .fail(function (data, status, headers, config) {
         		            	
