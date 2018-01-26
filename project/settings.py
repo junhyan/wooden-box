@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
     'notebook',
 ]
 
@@ -144,8 +143,9 @@ INTERNAL_IPS = ['127.0.0.1']
 
 MEDIA_URL = "/upload/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "notebook/upload")
-#DATABASE_SERVICE_NAME = 'postgresql'
-#DATABASE_ENGINE = 'postgresql'
-#DATABASE_NAME = 'wb'
-#DATABASE_USER = 'wb'
-#DATABASE_PASSWORD = '1'
+
+DATABASE_SERVICE_NAME = 'postgresql'
+DATABASE_ENGINE = 'postgresql'
+DATABASE_NAME = 'wb'
+DATABASE_USER = 'wb'
+DATABASE_PASSWORD = '1'
